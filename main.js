@@ -3,9 +3,21 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
+const modal = document.querySelector('#modal');
+const modalMessage = document.querySelector('#modal-message');
+const ModalSwitch = false;
+modal.classList.add('hidden');
 
+const hearts = document.querySelectorAll('span.like-glyph');
 
-
+function changeModa(msg) {
+  modal.classList.remove("hidden");
+  modalMessage.innerHTML += msg;
+  setTimeout(function() {
+    modal.classList.add('hidden');
+    modalMessage.innerHTML = "";
+  }, 4000);
+}
 
 //------------------------------------------------------------------------------
 // Don't change the code below: this function mocks the server response
